@@ -1,0 +1,38 @@
+.home-page {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  width: 100%;
+  min-height: 600px;
+}
+
+.home-page-left-side {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-page-right-side {
+  min-width: 50%;
+  background: #dde4e6 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-logo {
+  width: 98px;
+  height: 43px;
+}
+
+@media (max-width: 480px) {
+  .home-page {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 100px;
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,28 @@
+.temperature-container {
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+}
+.circle {
+  width: 24px;
+  height: 24px;
+  border: 8px solid #efefef;
+  border-radius: 50%;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.temperature-number {
+  font-size: 100px;
+  line-height: 100px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.temperature-state {
+  text-align: center;
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: 300;
+  color: #e8f1f2;
+}

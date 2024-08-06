@@ -1,0 +1,14 @@
+.lat-and-long-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--main-text-color);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+.lat-and-long-data-container {
+  display: flex;
+  gap: 16px;
+}

@@ -1,0 +1,21 @@
+.introduction-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding: 49px;
+}
+
+.user-introduction-card {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.welcome-text {
+  color: var(--main-text-color);
+  font-size: 30px;
+  line-height: 44px;
+  font-weight: 300;
+  width: 60%;
+}
