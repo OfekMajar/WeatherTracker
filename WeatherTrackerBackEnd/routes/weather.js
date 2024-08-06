@@ -19,6 +19,7 @@ router.get("/city", async (req, res) => {
     res.json(response.data);
   } catch (error) {
     console.error(error.stack);
+    res.send(error);
   }
 });
 module.exports = router;

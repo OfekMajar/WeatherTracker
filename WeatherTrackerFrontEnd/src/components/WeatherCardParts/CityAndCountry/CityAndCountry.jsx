@@ -7,7 +7,6 @@ function CityAndCountry() {
   const { county, localtime, region } = weather?.location
     ? weather.location
     : "unknown";
-    console.log(weather?.location);
     
   const date = formatDateTime(localtime);
   return (

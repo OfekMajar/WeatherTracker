@@ -6,7 +6,6 @@ import formatDateTime from "../../utils/dateFormater";
 function LatAndLong() {
   const { weather } = useContext(WeatherContext);
 
-  // Safe destructuring with default values
   const lon = weather?.location?.lon || "not provided yet";
   const lat = weather?.location?.lat || "not provided yet";
   const lastUpdated = weather?.current?.last_updated

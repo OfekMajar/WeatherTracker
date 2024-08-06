@@ -17,9 +17,10 @@ function SearchBar() {
         params: { city: cityName },
       });
       console.log(res.data);
-      setWeather(res.data)
+      setWeather(res.data);
     } catch (error) {
       console.error("Error fetching city data:", error);
+      setWeather();
     }
   };
 
