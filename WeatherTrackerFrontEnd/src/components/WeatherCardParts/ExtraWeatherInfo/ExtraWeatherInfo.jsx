@@ -7,9 +7,13 @@ function ExtraWeatherInfo({ isCelsius }) {
   const { weather } = useContext(WeatherContext);
   const { current } = weather || {};
 
-  const windSpeed = isCelsius ? current.wind_kph : current.wind_mph;
-  const precipitation = isCelsius ? current.precip_mm : current.precip_in;
-  const { humidity } = current;
+  const windSpeed = isCelsius
+    ? current?.wind_kph
+    : current?.wind_mph || "Unknown";
+  const precipitation = isCelsius
+    ? current?.precip_mm
+    : current?.precip_in || "Unknown";
+  const { humidity } = current || "Unknown";
   return (
     <div className={styles["extra-weather-info-container"]}>
       <div>

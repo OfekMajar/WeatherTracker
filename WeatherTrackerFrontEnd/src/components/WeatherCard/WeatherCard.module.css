@@ -7,6 +7,7 @@
   justify-content: space-between;
   padding: 49px;
   position: relative;
+  min-height: 80%;
 }
 
 .temp-scale {

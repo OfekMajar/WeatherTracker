@@ -10,6 +10,7 @@ function Temperature({ isCelsius }) {
     ? Math.round(current?.temp_c)
     : Math.round(current?.temp_f) || "Unknown";
   const condition = current?.condition?.text || "Unknown";
+  const conditionIcon = current?.condition?.icon || null;
 
   return (
     <section className={styles["temperature-container"]}>
@@ -17,7 +18,9 @@ function Temperature({ isCelsius }) {
         <div className={styles["circle"]}></div>
         <div className={styles["temperature-number"]}>{temp}</div>
       </div>
-      <div className={styles["temperature-state"]}>{condition}</div>
+      <div className={styles["temperature-state"]}>
+        {conditionIcon ? <img src={conditionIcon} alt="" /> : null} {condition}
+      </div>
     </section>
   );
 }
