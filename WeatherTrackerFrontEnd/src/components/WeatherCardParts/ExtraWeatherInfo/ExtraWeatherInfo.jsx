@@ -1,4 +1,5 @@
 import styles from "./ExtraWeatherInfo.module.css";
+import propTypes from "prop-types";
 
 function ExtraWeatherInfo() {
   return (
@@ -18,5 +19,7 @@ function ExtraWeatherInfo() {
     </div>
   );
 }
-
+ExtraWeatherInfo.propTypes = {
+  isCelsius: propTypes.bool,
+};
 export default ExtraWeatherInfo;

@@ -1,7 +1,8 @@
 import WeatherForecastCard from "./WeatherForecastCard";
 import styles from "./WeatherForecast.module.css";
+import propTypes from "prop-types";
 
-function WeatherForecast() {
+function WeatherForecast({ isCelsius }) {
   let forecast = [
     { time: "13:00", temperature: 19 },
     { time: "14:00", temperature: 21 },
@@ -23,5 +24,7 @@ function WeatherForecast() {
     </div>
   );
 }
-
+WeatherForecast.propTypes = {
+  isCelsius: propTypes.bool,
+};
 export default WeatherForecast;

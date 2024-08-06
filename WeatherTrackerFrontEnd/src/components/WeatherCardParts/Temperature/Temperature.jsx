@@ -1,5 +1,6 @@
 import styles from "./Temperature.module.css";
-function Temperature() {
+import propTypes from "prop-types"
+function Temperature({isCelsius}) {
   return (
     <section className={styles["temperature-container"]}>
       <div className={styles["temperature-number-box"]}>
@@ -11,4 +12,7 @@ function Temperature() {
   );
 }
 
+Temperature.propTypes = {
+  isCelsius: propTypes.bool,
+};
 export default Temperature;
