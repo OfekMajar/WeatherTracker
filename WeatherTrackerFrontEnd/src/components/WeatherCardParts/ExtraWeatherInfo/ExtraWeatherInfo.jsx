@@ -12,7 +12,7 @@ function ExtraWeatherInfo({ isCelsius }) {
     : current?.wind_mph || "Unknown";
   const precipitation = isCelsius
     ? current?.precip_mm
-    : current?.precip_in || "Unknown";
+    : current?.precip_in ;
   const { humidity } = current || "Unknown";
   return (
     <div className={styles["extra-weather-info-container"]}>
