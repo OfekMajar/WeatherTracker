@@ -29,3 +29,32 @@
 @media (max-width: 770px) {
  
 }
+@media (max-width: 570px) {
+  .search-bar-my-city-button,
+  .search-bar-clear-button {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  .search-bar-button {
+    font-size: 15px;
+    line-height: 18px;
+  }
+ 
+}
+
+@media (max-width: 400px) {
+  .search-bar-my-city-button,
+  .search-bar-clear-button {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .search-bar-button {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  .search-bar-label {
+    justify-content: space-between;
+    gap: 0;
+    font-size: 14px;
+  }
+}

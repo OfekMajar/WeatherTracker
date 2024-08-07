@@ -29,15 +29,20 @@
 @media (max-width: 770px) {
   .home-page {
     flex-direction: column;
+    padding: 0;
+align-items: center;  }
+  .home-page-left-side {
+    max-width: 80%;
+    margin-top: 25px;
   }
   .home-page-right-side {
-    padding: 16px;
     min-height: 600px;
+    min-width: 600px;
   }
 }
 
 @media (max-width: 570px) {
-  .home-page{
+  .home-page {
     padding: 25px;
   }
 }
