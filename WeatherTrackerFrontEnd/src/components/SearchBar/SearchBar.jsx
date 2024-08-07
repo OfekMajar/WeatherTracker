@@ -11,10 +11,15 @@ import {
 
 function SearchBar() {
   const [cityName, setCityName] = useState("");
-  const { setWeather } = useContext(WeatherContext);
+  const { setWeather, fetchCurrentLocationWeather } =
+    useContext(WeatherContext);
 
   const handleChange = (event) => {
     setCityName(event.target.value);
+  };
+
+  const handleMyCity = () => {
+    fetchCurrentLocationWeather();
   };
 
   const handleSearch = async () => {
@@ -32,7 +37,7 @@ function SearchBar() {
 
       if (res.status === 200 && data.status !== 400) {
         setWeather(data);
-        toastSuccess(`${data?.location?.region}'s weather`);
+        toastSuccess(`${data?.location?.name}'s weather`);
       } else {
         toastError(data.message || "Error fetching weather data.");
         setWeather(null);
@@ -46,10 +51,25 @@ function SearchBar() {
     }
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
+  const handleClear = () => {
+    setCityName("");
+    setWeather();
+  };
   return (
     <div className={styles["search-bar-container"]}>
       <label className={styles["search-bar-label"]} htmlFor="cityName">
-        City name
+        City name{" "}
+        <button
+          className={styles["search-bar-my-city-button"]}
+          onClick={handleMyCity}>
+          Check my city
+        </button>
       </label>
       <div className={styles["search-bar-input-box"]}>
         <input
@@ -58,6 +78,7 @@ function SearchBar() {
           id="cityName"
           value={cityName}
           onChange={handleChange}
+          onKeyDown={handleKeyDown}
         />
         <button className={styles["search-bar-button"]} onClick={handleSearch}>
           Check

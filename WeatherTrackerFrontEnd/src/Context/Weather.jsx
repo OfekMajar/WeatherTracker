@@ -2,6 +2,7 @@ import { createContext, useState } from "react";
 import propTypes from "prop-types";
 import axios from "axios";
 import { baseUrl } from "../utils/backEndUtils";
+import { toastError, toastLoading, toastSuccess } from "../components/AppToaster/toastCommands";
 
 export const WeatherContext = createContext({});
 
@@ -14,13 +15,21 @@ export default function WeatherProvider({ children }) {
         params: { lat: latitude, lon: longitude },
       });
       const { data } = res;
+
       if (res.status === 200 && data.status !== 400) {
         setWeather(data);
-      } else {
-        console.error("Error fetching weather data:", data.message);
+        toastSuccess(`${data?.location?.name}'s weather`);
+      }
+      if (data.status === 400) {
+        toastError(data.message);
+        setWeather();
       }
     } catch (error) {
-      console.error("Error fetching weather data:", error);
+      console.error("Error fetching city data:", error);
+      setWeather();
+      toastError(error);
+    } finally {
+      toastLoading(false);
     }
   };
 
@@ -43,7 +52,6 @@ export default function WeatherProvider({ children }) {
   const shared = {
     weather,
     setWeather,
-    fetchWeatherByCoordinates,
     fetchCurrentLocationWeather,
   };
 
