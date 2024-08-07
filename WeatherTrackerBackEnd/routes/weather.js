@@ -19,4 +19,23 @@ router.get("/city", async (req, res) => {
     res.send(error);
   }
 });
+
+router.get("/coordinates", async (req, res) => {
+  try {
+    const { lat, lon } = req.query;
+
+    if (!lat || !lon) {
+      return res.status(400).send("Missing coordinates");
+    }
+
+    const response = await axios.get(
+      `http://api.weatherapi.com/v1/forecast.json?key=${WEATHER_API_KEY}&q=${lat},${lon}&days=2`
+    );
+
+    res.json(response.data);
+  } catch (error) {
+    console.error(error.stack);
+    res.status(500).send("Error fetching weather data");
+  }
+});
 module.exports = router;

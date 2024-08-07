@@ -12,30 +12,35 @@ import {
 function SearchBar() {
   const [cityName, setCityName] = useState("");
   const { setWeather } = useContext(WeatherContext);
+
   const handleChange = (event) => {
     setCityName(event.target.value);
   };
 
   const handleSearch = async () => {
+    if (!cityName) {
+      toastError("Please enter a city name.");
+      return;
+    }
+
     try {
       toastLoading(true);
       const res = await axios.get(`${baseUrl}/weather/city`, {
         params: { city: cityName },
       });
       const { data } = res;
-      console.log(data);
 
       if (res.status === 200 && data.status !== 400) {
         setWeather(data);
         toastSuccess(`${data?.location?.region}'s weather`);
-      }
-      if (data.status === 400) {
-        toastError(data.message);
+      } else {
+        toastError(data.message || "Error fetching weather data.");
+        setWeather(null);
       }
     } catch (error) {
       console.error("Error fetching city data:", error);
-      setWeather();
-      toastError(error);
+      setWeather(null);
+      toastError(error.message || "Error fetching weather data.");
     } finally {
       toastLoading(false);
     }

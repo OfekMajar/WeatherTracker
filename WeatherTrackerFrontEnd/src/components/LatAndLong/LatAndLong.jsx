@@ -9,7 +9,7 @@ function LatAndLong() {
   const lon = weather?.location?.lon || "not provided yet";
   const lat = weather?.location?.lat || "not provided yet";
   const lastUpdated = weather?.current?.last_updated
-    ? formatDateTime(weather.current.last_updated)
+    ? formatDateTime(weather?.current?.last_updated)
     : "not updated";
 
   return (

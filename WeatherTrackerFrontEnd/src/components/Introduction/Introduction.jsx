@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import LatAndLong from "../LatAndLong/LatAndLong";
 import SearchBar from "../SearchBar/SearchBar";
 import styles from "./Introduction.module.css";
+import { WeatherContext } from "../../Context/Weather";
 function Introduction() {
+  const { weather } = useContext(WeatherContext);
   return (
     <div className={styles["introduction-container"]}>
       <div className={styles["user-introduction-card"]}>
@@ -12,7 +15,7 @@ function Introduction() {
           <SearchBar />
         </div>
       </div>
-      <LatAndLong />
+      {weather ? <LatAndLong /> : null}
     </div>
   );
 }
