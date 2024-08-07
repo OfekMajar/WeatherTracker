@@ -54,23 +54,7 @@
 
 @media (max-width: 768px) {
   .weather-forecast-container {
-    flex-direction: column;
     align-items: center;
-  }
-
-  .weather-forecast-card {
-    flex: 1 1 100%;
-    max-width: none;
-  }
-
-  .weather-forecast-time {
-    font-size: 14px;
-    line-height: 18px;
-  }
-
-  .temperature-number {
-    font-size: 14px;
-    line-height: 18px;
   }
 }
 

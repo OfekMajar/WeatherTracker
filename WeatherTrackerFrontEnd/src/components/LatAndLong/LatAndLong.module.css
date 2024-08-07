@@ -12,3 +12,9 @@
   display: flex;
   gap: 16px;
 }
+
+@media (max-width: 770px) {
+  .lat-and-long-container {
+    margin-top: 16px;
+  }
+}

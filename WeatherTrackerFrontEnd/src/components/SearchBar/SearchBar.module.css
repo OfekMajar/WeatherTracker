@@ -43,8 +43,8 @@
 }
 
 .search-bar-my-city-button,
-.search-bar-clear-button{
-    font-size: 15px;
+.search-bar-clear-button {
+  font-size: 15px;
   line-height: 24px;
 }
 .search-bar-button {
@@ -92,4 +92,34 @@
   background: #024d1b;
   transform: translateY(-40%);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 570px) {
+  .search-bar-my-city-button,
+  .search-bar-clear-button {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  .search-bar-button {
+    font-size: 15px;
+    line-height: 18px;
+  }
+ 
+}
+
+@media (max-width: 400px) {
+  .search-bar-my-city-button,
+  .search-bar-clear-button {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .search-bar-button {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  .search-bar-label {
+    justify-content: space-between;
+    gap: 0;
+    font-size: 14px;
+  }
 }
