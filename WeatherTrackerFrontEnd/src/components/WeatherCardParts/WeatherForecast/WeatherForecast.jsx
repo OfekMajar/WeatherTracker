@@ -1,23 +1,38 @@
 import WeatherForecastCard from "./WeatherForecastCard";
 import styles from "./WeatherForecast.module.css";
 import propTypes from "prop-types";
+import { useContext } from "react";
+import { WeatherContext } from "../../../Context/Weather";
 
 function WeatherForecast({ isCelsius }) {
-  let forecast = [
-    { time: "13:00", temperature: 19 },
-    { time: "14:00", temperature: 21 },
-    { time: "15:00", temperature: 23 },
-    { time: "16:00", temperature: 20 },
-    { time: "17:00", temperature: 16 },
-  ];
+  const { weather } = useContext(WeatherContext);
+  const localtime = weather?.location?.localtime;
+  let currHour = new Date(localtime).getHours();
+  const forecast = weather?.forecast?.forecastday;
+
+  const next5Hours = [];
+
+  for (let i = currHour; i < 24 && next5Hours.length < 5; i++) {
+    next5Hours.push(forecast[0].hour[i]);
+  }
+
+  // just incase its after 20:00 and we need more data from the next day
+  if (next5Hours.length < 5) {
+    for (let i = 0; i < 24 && next5Hours.length < 5; i++) {
+      next5Hours.push(forecast[1].hour[i]);
+    }
+  }
+
+  console.log(next5Hours);
+
   return (
     <div className={styles["weather-forecast-container"]}>
-      {forecast.map((prediction) => {
+      {next5Hours.map((prediction, index) => {
         return (
           <WeatherForecastCard
-            time={prediction.time}
-            key={prediction.time}
-            temp={prediction.temperature}
+            forecast={prediction}
+            key={`forecast-${index}`}
+            isCelsius={isCelsius}
           />
         );
       })}

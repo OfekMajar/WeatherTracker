@@ -2,6 +2,11 @@
   direction: rtl;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.temperature-number-box{
+  width: max-content; 
 }
 .circle {
   width: 24px;
@@ -29,13 +34,12 @@
   color: #e8f1f2;
   position: relative;
   justify-content: center;
-  min-width: 150px;
 }
 .temperature-state img {
   width: 50px;
   height: 50px;
   position: absolute;
-  right: 0;
+  right: -50px;
   top: 50%;
   transform: translateY(-50%);
 }

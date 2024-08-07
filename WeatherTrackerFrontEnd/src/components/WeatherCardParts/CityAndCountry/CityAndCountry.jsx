@@ -7,7 +7,7 @@ function CityAndCountry() {
   const { country, localtime, name } = weather?.location
     ? weather.location
     : "unknown";
-    
+
   const date = formatDateTime(localtime);
   return (
     <section className={styles["city-and-country-box"]}>

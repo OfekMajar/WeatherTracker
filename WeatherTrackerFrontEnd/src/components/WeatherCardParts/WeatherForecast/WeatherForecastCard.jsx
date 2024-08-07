@@ -1,10 +1,13 @@
 import styles from "./WeatherForecast.module.css";
 import propTypes from "prop-types";
 
-function WeatherForecastCard({ time, temp }) {
+function WeatherForecastCard({ forecast, isCelsius }) {
+  const hour = new Date(forecast?.time).getHours();
+  const temp = Math.round(isCelsius ? forecast.temp_c : forecast.temp_f);
+
   return (
     <div className={styles["weather-forecast-card"]}>
-      <div className={styles["weather-forecast-time"]}>{time}</div>
+      <div className={styles["weather-forecast-time"]}>{hour}:00</div>
       <div className={styles["temperature-number-box"]}>
         <div className={styles["circle"]}></div>
         <div className={styles["temperature-number"]}>{temp}</div>
@@ -14,7 +17,7 @@ function WeatherForecastCard({ time, temp }) {
 }
 
 WeatherForecastCard.propTypes = {
-  time: propTypes.string,
-  temp: propTypes.number || propTypes.string,
+  forecast: propTypes.object,
+  isCelsius: propTypes.bool,
 };
 export default WeatherForecastCard;

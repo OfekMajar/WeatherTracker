@@ -12,15 +12,9 @@ function WeatherCard() {
   return (
     <div className={styles["weather-card-container"]}>
       <CityAndCountry />
-      <div>
-        <Temperature isCelsius={isCelsius} />
-      </div>
-      <div>
-        <ExtraWeatherInfo isCelsius={isCelsius} />
-      </div>
-      <div>
-        <WeatherForecast isCelsius={isCelsius} />
-      </div>
+      <Temperature isCelsius={isCelsius} />
+      <ExtraWeatherInfo isCelsius={isCelsius} />
+      <WeatherForecast isCelsius={isCelsius} />
       <div className={`${styles["temp-scale"]} `} onClick={handleCelsiusSwitch}>
         {isCelsius ? "C" : "F"}
       </div>
