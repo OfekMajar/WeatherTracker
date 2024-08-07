@@ -30,12 +30,12 @@
 }
 
 .search-bar-button,
-.search-bar-my-city-button {
-  background: #046b3b;
+.search-bar-my-city-button,
+.search-bar-clear-button {
   border-radius: 10px;
   color: #ffffff;
   border: none;
-  padding: 2px 6px;
+  padding: 6px 12px;
   cursor: pointer;
   font-size: 18px;
   line-height: 27px;
@@ -43,6 +43,7 @@
 }
 
 .search-bar-button {
+  background: #046b3b;
   position: absolute;
   width: 80px;
   top: 50%;
@@ -51,9 +52,12 @@
 }
 
 .search-bar-my-city-button {
+  background: #046b3b;
+}
+
+.search-bar-clear-button {
+  background-color: #d9534f;
   font-size: 14px;
-  line-height: 18px;
-  padding: 6px 12px;
 }
 
 .search-bar-button:hover,
@@ -62,11 +66,23 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.search-bar-clear-button:hover {
+  background-color: #c9302c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .search-bar-my-city-button:active {
   background: #024d1b;
   transform: translateY(2px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+.search-bar-clear-button:active {
+  background-color: #a94442;
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .search-bar-button:active {
   background: #024d1b;
   transform: translateY(-40%);

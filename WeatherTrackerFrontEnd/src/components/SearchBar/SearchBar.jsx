@@ -70,6 +70,11 @@ function SearchBar() {
           onClick={handleMyCity}>
           Check my city
         </button>
+        <button
+          className={styles["search-bar-clear-button"]}
+          onClick={handleClear}>
+          Clear
+        </button>
       </label>
       <div className={styles["search-bar-input-box"]}>
         <input
