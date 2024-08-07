@@ -2,8 +2,8 @@ export default function formatDateTime(inputDateTime) {
   const date = new Date(inputDateTime);
 
   const day = date.getDate();
-  const month = date.getMonth() + 1; // Months are zero-based
-  const year = date.getFullYear().toString().slice(-2); // Get the last two digits of the year
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear().toString().slice(-2);
 
   const hours = date.getHours();
   const minutes = date.getMinutes();

@@ -23,12 +23,35 @@ export default function WeatherProvider({ children }) {
       console.error("Error fetching weather data:", error);
     }
   };
-  const shared = { weather, setWeather, fetchWeatherByCoordinates };
+
+  const fetchCurrentLocationWeather = () => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          fetchWeatherByCoordinates(latitude, longitude);
+        },
+        (error) => {
+          console.error("Error getting user's location:", error);
+        }
+      );
+    } else {
+      console.error("Geolocation is not available in this browser.");
+    }
+  };
+
+  const shared = {
+    weather,
+    setWeather,
+    fetchWeatherByCoordinates,
+    fetchCurrentLocationWeather,
+  };
+
   return (
     <WeatherContext.Provider value={shared}>{children}</WeatherContext.Provider>
   );
 }
 
 WeatherProvider.propTypes = {
-  children: propTypes.node,
+  children: propTypes.node.isRequired,
 };

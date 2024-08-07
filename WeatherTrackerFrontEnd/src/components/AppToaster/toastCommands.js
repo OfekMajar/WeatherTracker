@@ -6,10 +6,8 @@ export const toastSuccess = (successMsg) => {
 
 export const toastLoading = (isLoading) => {
   if (isLoading) {
-    // Show loading toast and store the ID
     loadingToastId = toast.loading("Loading...");
   } else {
-    // Clear the loading toast if it exists
     if (loadingToastId) {
       toast.remove(loadingToastId);
       loadingToastId = null;

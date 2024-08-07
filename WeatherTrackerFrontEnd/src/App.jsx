@@ -17,23 +17,6 @@ function App() {
       .forEach((t) => toast.dismiss(t.id));
   }, [toasts]);
 
-  const { fetchWeatherByCoordinates } = useContext(WeatherContext);
-
-  useEffect(() => {
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          fetchWeatherByCoordinates(latitude, longitude);
-        },
-        (error) => {
-          console.error("Error getting user's location:", error);
-        }
-      );
-    } else {
-      console.error("Geolocation is not available in this browser.");
-    }
-  }, [fetchWeatherByCoordinates]);
 
   return (
     <>
