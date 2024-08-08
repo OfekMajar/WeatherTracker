@@ -15,9 +15,9 @@ function WeatherCard() {
       <Temperature isCelsius={isCelsius} />
       <ExtraWeatherInfo isCelsius={isCelsius} />
       <WeatherForecast isCelsius={isCelsius} />
-      <div className={`${styles["temp-scale"]} `} onClick={handleCelsiusSwitch}>
+      <button className={styles["temp-scale"]} onClick={handleCelsiusSwitch}>
         {isCelsius ? "C" : "F"}
-      </div>
+      </button>
     </div>
   );
 }

@@ -34,7 +34,7 @@ function SearchBar() {
         setWeather(data);
         toastSuccess(`${data?.location?.name}'s weather`);
       } else {
-        toastError(data.message || "Error fetching weather data.");
+        toastError("Could not find the city");
         setWeather(null);
       }
     } catch (error) {
@@ -56,13 +56,15 @@ function SearchBar() {
     setCityName("");
     setWeather();
   };
+
   return (
     <div className={styles["search-bar-container"]}>
       <label className={styles["search-bar-label"]} htmlFor="cityName">
-        City name{" "}
+        City name
         <button
           className={styles["search-bar-clear-button"]}
-          onClick={handleClear}>
+          onClick={handleClear}
+          aria-label="Clear the city name input field and reset weather data">
           Clear
         </button>
       </label>
@@ -71,11 +73,16 @@ function SearchBar() {
           className={styles["search-bar-input"]}
           type="text"
           id="cityName"
+          placeholder="London"
           value={cityName}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
+          aria-label="Enter the name of the city to check its weather"
         />
-        <button className={styles["search-bar-button"]} onClick={handleSearch}>
+        <button
+          className={styles["search-bar-button"]}
+          onClick={handleSearch}
+          aria-label="Check the weather for the entered city name">
           Check
         </button>
       </div>

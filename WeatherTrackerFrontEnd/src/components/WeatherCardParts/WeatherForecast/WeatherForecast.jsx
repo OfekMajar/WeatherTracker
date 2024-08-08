@@ -12,11 +12,10 @@ function WeatherForecast({ isCelsius }) {
     if (!weather) return;
 
     const localtime = weather?.location?.localtime || "00:00";
-    console.log(localtime);
 
     let currHour = new Date(localtime).getHours();
     const forecast = weather?.forecast?.forecastday;
-    
+
     const newNext5Hours = [];
     if (forecast && forecast.length > 0 && forecast[0].hour) {
       for (let i = currHour; i < 24 && newNext5Hours.length < 5; i++) {
