@@ -11,15 +11,10 @@ import {
 
 function SearchBar() {
   const [cityName, setCityName] = useState("");
-  const { setWeather, fetchCurrentLocationWeather } =
-    useContext(WeatherContext);
+  const { setWeather } = useContext(WeatherContext);
 
   const handleChange = (event) => {
     setCityName(event.target.value);
-  };
-
-  const handleMyCity = () => {
-    fetchCurrentLocationWeather();
   };
 
   const handleSearch = async () => {
@@ -65,11 +60,6 @@ function SearchBar() {
     <div className={styles["search-bar-container"]}>
       <label className={styles["search-bar-label"]} htmlFor="cityName">
         City name{" "}
-        <button
-          className={styles["search-bar-my-city-button"]}
-          onClick={handleMyCity}>
-          Check my city
-        </button>
         <button
           className={styles["search-bar-clear-button"]}
           onClick={handleClear}>

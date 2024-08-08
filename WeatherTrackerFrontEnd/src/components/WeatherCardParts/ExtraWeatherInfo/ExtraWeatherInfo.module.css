@@ -20,3 +20,20 @@
   font-weight: 500;
   color: #e8f1f2;
 }
+
+@media (max-width: 570px) {
+  .extra-weather-info-container {
+    gap: 12px;
+  }
+  .extra-weather-info-container div {
+    min-width: 75px;
+  }
+  .info-title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .info-amount {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}

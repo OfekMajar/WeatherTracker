@@ -34,6 +34,8 @@ align-items: center;  }
   .home-page-left-side {
     max-width: 80%;
     margin-top: 25px;
+    width: 80%;
+    
   }
   .home-page-right-side {
     min-height: 600px;
@@ -44,5 +46,8 @@ align-items: center;  }
 @media (max-width: 570px) {
   .home-page {
     padding: 25px;
+    min-width: 300px;
   }
 }
+
+

@@ -58,19 +58,19 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 570px) {
   .weather-forecast-time {
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 15px;
+    line-height: 18px;
   }
 
   .temperature-number {
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 15px;
+    line-height: 18px;
   }
 
   .circle {
-    width: 3px;
-    height: 3px;
+    width: 4px;
+    height: 4px;
   }
 }
