@@ -21,7 +21,7 @@ function WeatherCard() {
         role="button"
         aria-pressed={!isCelsius}
         aria-label={`Switch to ${isCelsius ? "Fahrenheit" : "Celsius"}`}>
-        {isCelsius ? "C" : "F"}
+        {isCelsius ? "C°" : "F°"}
       </button>
     </div>
   );

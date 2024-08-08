@@ -37,8 +37,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  animation: bop 7s ease-in-out 5s infinite alternate
-
+  animation: bop 7s ease-in-out 5s infinite alternate;
 }
 
 .temp-scale:focus {
@@ -50,10 +49,20 @@
     padding: 25px;
     min-height: 550px;
   }
+  .temp-scale {
+    top: 20px;
+    right: 20px;
+  }
 }
 @media (max-width: 570px) {
   .weather-card-container {
     padding: 25px;
     min-height: 400px;
+  }
+  .temp-scale {
+    width: 22px;
+    height: 22px;
+    font-weight: 500;
+    border: 2px solid #ffffff;
   }
 }
