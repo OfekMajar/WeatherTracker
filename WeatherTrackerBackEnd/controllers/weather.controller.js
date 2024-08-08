@@ -1,9 +1,9 @@
-const { Router } = require("express");
-const axios = require("axios");
-const router = Router();
 const { config } = require("../config/");
+const axios = require("axios");
+
 const { WEATHER_API_KEY } = config;
-router.get("/city", async (req, res) => {
+
+const getCityWeather = async (req, res) => {
   try {
     const cityName = req.query.city;
 
@@ -18,7 +18,6 @@ router.get("/city", async (req, res) => {
     console.error(error.stack);
     res.send(error);
   }
-});
+};
 
-
-module.exports = router;
+module.exports = { getCityWeather };
