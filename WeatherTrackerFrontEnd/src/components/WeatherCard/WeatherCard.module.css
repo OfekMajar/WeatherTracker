@@ -10,28 +10,40 @@
   min-height: 80%;
 }
 
+@keyframes bop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .temp-scale {
   position: absolute;
   top: 10%;
   right: 10%;
   width: 30px;
   height: 30px;
-  border: 3px solid #ffffff;
   border-radius: 50%;
   font-weight: 600;
   color: #ffffff;
   background: none;
-  border: none;
+  border: 3px solid #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  animation: bop 7s ease-in-out 5s infinite alternate
+
 }
 
 .temp-scale:focus {
   outline: none;
 }
-
 
 @media (max-width: 770px) {
   .weather-card-container {
@@ -43,6 +55,5 @@
   .weather-card-container {
     padding: 25px;
     min-height: 400px;
-
   }
 }

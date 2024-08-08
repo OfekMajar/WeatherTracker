@@ -21,12 +21,20 @@ function Temperature({ isCelsius }) {
   return (
     <section className={styles["temperature-container"]}>
       <div className={styles["temperature-number-box"]}>
-        <div className={styles["circle"]}></div>
-        <div className={styles["temperature-number"]}>{temp}</div>
+        <div className={styles["circle"]} aria-hidden="true"></div>
+        <div
+          className={styles["temperature-number"]}
+          aria-label={`City's temperature in ${
+            isCelsius ? "celsius" : "fahrenheit "
+          }`}>
+          {temp}
+        </div>
       </div>
-      <div className={styles["temperature-state"]}>
+      <div
+        className={styles["temperature-state"]}
+        aria-label={`The weather condition is ${condition}`}>
         {conditionIcon && !imageError ? (
-          <img src={conditionIcon} onError={handleImageError} />
+          <img src={conditionIcon} alt="" onError={handleImageError} />
         ) : null}{" "}
         {condition}
       </div>

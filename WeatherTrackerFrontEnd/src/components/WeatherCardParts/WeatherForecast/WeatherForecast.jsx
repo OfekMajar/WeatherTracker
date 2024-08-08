@@ -34,7 +34,7 @@ function WeatherForecast({ isCelsius }) {
   }, [weather]);
 
   return (
-    <div className={styles["weather-forecast-container"]}>
+    <div aria-label="Forecast of the next 5 hours" className={styles["weather-forecast-container"]}>
       {next5Hours.map((prediction, index) => (
         <WeatherForecastCard
           forecast={prediction}

@@ -10,10 +10,18 @@ function CityAndCountry() {
 
   const date = formatDateTime(localtime);
   return (
-    <section className={styles["city-and-country-box"]}>
-      <p className={styles["city-name"]} >{name}</p>
-      <p className={styles["country-name"]}>{country}</p>
-      <p className={styles["weather-date"]}>{date}</p>
+    <section
+      className={styles["city-and-country-box"]}
+      aria-label="City and country information">
+      <p className={styles["city-name"]} aria-label={`City name: ${name}`}>
+        {name}
+      </p>
+      <p className={styles["country-name"]} aria-label={`Country: ${country}`}>
+        {country}
+      </p>
+      <p className={styles["weather-date"]} aria-label={`Local time: ${date}`}>
+        {date}
+      </p>
     </section>
   );
 }

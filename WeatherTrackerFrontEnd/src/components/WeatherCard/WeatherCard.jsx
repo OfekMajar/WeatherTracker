@@ -15,7 +15,12 @@ function WeatherCard() {
       <Temperature isCelsius={isCelsius} />
       <ExtraWeatherInfo isCelsius={isCelsius} />
       <WeatherForecast isCelsius={isCelsius} />
-      <button className={styles["temp-scale"]} onClick={handleCelsiusSwitch}>
+      <button
+        className={styles["temp-scale"]}
+        onClick={handleCelsiusSwitch}
+        role="button"
+        aria-pressed={!isCelsius}
+        aria-label={`Switch to ${isCelsius ? "Fahrenheit" : "Celsius"}`}>
         {isCelsius ? "C" : "F"}
       </button>
     </div>
