@@ -10,7 +10,11 @@ function Home() {
   return (
     <div className={styles["home-page"]}>
       <section className={styles["home-page-left-side"]}>
-        <img className={styles["company-logo"]} src={logo} alt="" />
+        <img
+          className={styles["company-logo"]}
+          src={logo}
+          alt="Fintek company logo"
+        />
         <Introduction />
       </section>
       {weather ? (
